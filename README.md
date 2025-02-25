@@ -28,30 +28,84 @@ The dataset includes:
 
 ---
 
-## 🔍 **Key Insights**
-### **1. Popular Products and Aisles**
-- Identified the **most popular aisles and products** (e.g., fresh fruits, organic items).
-- Discovered that **organic products** have a higher reorder percentage, suggesting a growing demand.
+## 🔍 **Exploratory Data Analysis (EDA)**
+
+### **1. Most Popular Aisles**
+The plot below shows the **most popular aisles** based on the total number of products bought. Fresh fruits and vegetables dominate the list, indicating high demand for these categories.
 
 <p align="center">
   <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/popular-aisles.png">
 </p>
 
-### **2. Customer Segmentation**
-- Segmented customers into **5 distinct groups** using **K-Means clustering**:
-  - **Fresh Veggie Lovers**: Customers who primarily buy fresh vegetables.
-  - **Organic Enthusiasts**: Customers who prefer organic products.
-  - **Frequent Shoppers**: Customers who buy a wide variety of products.
-  - **Water Lovers**: Customers who frequently purchase sparkling water.
-  - **Packaged Produce Buyers**: Customers who prefer packaged fruits and vegetables.
+### **2. Reorder Percentage by Aisle**
+The reorder percentage of **day-to-day food items** (e.g., fresh fruits, vegetables) is high, while items like vitamins, first-aid, and beauty products have a lower reorder percentage. This makes sense, as groceries are purchased regularly, while other items are bought less frequently.
+
+<p align="center">
+  <img width="400" height="220" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/aisle-high-reorder.png"> 
+  <img width="400" height="220" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/aisle-low-reorder.png"> 
+</p>
+
+### **3. Popular Departments**
+The plot below shows the **most popular departments**. The store layout should be designed so that popular departments (e.g., produce, dairy) are close to each other, improving the shopping experience.
+
+<p align="center">
+  <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/popular-departments.png">
+</p>
+
+### **4. Most Popular Products**
+The plot below shows the **most popular products**. Interestingly, many of the top products are **organic**, suggesting a growing preference for organic items.
+
+<p align="center">
+  <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/Most-popular-products.png">
+</p>
+
+### **5. Organic vs. Inorganic Products**
+While there are fewer organic products, their **mean reorder percentage** is higher than inorganic products. This suggests that customers who buy organic products are more loyal and likely to repurchase.
+
+<p align="center">
+  <img width="400" height="250" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/Total-organic-inorganic-products.png">
+  <img width="400" height="250" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/Reorder-organic-inorganic-products.png">
+</p>
+
+### **6. Add-to-Cart Order vs. Reorder Percentage**
+The plot below shows that products added to the cart earlier have a **higher reorder percentage**. This makes sense, as customers tend to prioritize essential items (e.g., milk, bread) over discretionary purchases.
+
+<p align="center">
+  <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/Add-to-cart-VS-reorder.png">
+</p>
+
+### **7. Reorder Percentage vs. Total Orders**
+The plot below shows a **ceiling effect**: Many customers try a product once but do not reorder it. However, some products have a high reorder percentage, indicating strong customer loyalty.
+
+<p align="center">
+  <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/reorder-total-orders.png">
+</p>
+
+### **8. Cumulative Users per Product**
+The plot below shows that **85% of users buy only 10,000 out of 49,688 products**. This insight can be used for **shelf space optimization**, focusing on high-demand products.
+
+<p align="center">
+  <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/cumsum_products.png">
+</p>
+
+---
+
+## 🧑‍🤝‍🧑 **Customer Segmentation**
+Using **K-Means clustering** on customer purchase data, we segmented customers into **5 distinct groups**:
+1. **Fresh Veggie Lovers**: Customers who primarily buy fresh vegetables.
+2. **Organic Enthusiasts**: Customers who prefer organic products.
+3. **Frequent Shoppers**: Customers who buy a wide variety of products.
+4. **Water Lovers**: Customers who frequently purchase sparkling water.
+5. **Packaged Produce Buyers**: Customers who prefer packaged fruits and vegetables.
 
 <p align="center">
   <img width="600" height="400" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/cluster.png">
 </p>
 
-### **3. Market Basket Analysis**
-- Applied **association rule mining** to identify **28 product pairs** with high lift (e.g., limes and large lemons).
-- Provided recommendations for **cross-selling** and **store layout optimization**.
+---
+
+## 🛒 **Market Basket Analysis**
+Using **association rule mining**, we identified **28 product pairs** with high lift (e.g., limes and large lemons). These insights can be used for **cross-selling** and **store layout optimization**.
 
 | Product A  | Product B | Lift |
 | ------------- | ------------- | ---- |
@@ -66,9 +120,10 @@ The dataset includes:
 | Honeycrisp Apple | Banana | 1.77 |
 | Organic Avocado | Organic Baby Spinach | 1.70 |
 
-### **4. Predictive Modeling**
-- Built **XGBoost** and **Neural Network** models to predict product reorders, achieving an **AUC-ROC score of 0.85**.
-- Extracted **key features** such as product popularity, customer behavior, and aisle/department trends.
+---
+
+## 🤖 **Predictive Modeling**
+We built **XGBoost** and **Neural Network** models to predict product reorders, achieving an **AUC-ROC score of 0.85**. Key features included product popularity, customer behavior, and aisle/department trends.
 
 <p align="center">
   <img width="600" height="300" src="https://github.com/manishdevdi/Instacart-Market-Basket-Analysis/blob/main/Plots/XGBoost%20Performance.png">
