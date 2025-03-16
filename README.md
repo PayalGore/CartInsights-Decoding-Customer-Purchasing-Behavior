@@ -157,5 +157,5 @@ We built **XGBoost** and **Neural Network** models to predict product reorders, 
 ## ⚙️ **Installation & Setup**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/manishdevdi/Instacart-Market-Basket-Analysis.git
+   git clone https://github.com/PayalGore/CartInsights-Decoding-Customer-Purchasing-Behavior.git
    cd CartInsights
